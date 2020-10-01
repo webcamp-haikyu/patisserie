@@ -13,9 +13,11 @@ Rails.application.routes.draw do
   devise_for :customers
   scope module: :customers do
     root 'products#top'
-    resources :customers, only:[:edit, :update]
+    resources :customers, only:[ :update]
     get 'customers/my_page' => 'customers#show'
     get 'customers' => 'customers#check'
+    get 'customers/edit' => 'customers#edit'
+    patch 'customers' => 'customers#update'
     patch 'customers/withdrawal' => 'customers#withdrawal'
     resources :products, only: [:index, :show]
     get 'about' => 'products#about'
