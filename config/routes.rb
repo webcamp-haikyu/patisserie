@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  devise_for :admins
+  devise_for :admins, controllers: {
+  sessions:      'admins/sessions',
+  passwords:     'admins/passwords',
+  registrations: 'admins/registrations'
+  }
   namespace :admins do
     root 'customers#top'
     resources :customers, only: [:index, :show, :edit, :update]
@@ -10,7 +14,12 @@ Rails.application.routes.draw do
     resources :order_items, only: [:update]
   end
 
-  devise_for :customers
+  devise_for :customers, controllers: {
+  sessions:      'customers/sessions',
+  passwords:     'customers/passwords',
+  registrations: 'customers/registrations'
+  }
+
   scope module: :customers do
     root 'products#top'
     resources :customers, only:[ :update]
