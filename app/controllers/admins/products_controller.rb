@@ -1,5 +1,7 @@
 class Admins::ProductsController < ApplicationController
+	# 商品一覧
 	def index
+		@products = Product.all
 	end
 
 	# 商品新規登録
