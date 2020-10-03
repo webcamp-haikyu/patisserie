@@ -1,2 +1,31 @@
-<h1>Admins::Products#new</h1>
-<p>Find me in app/views/admins/products/new.html.erb</p>
+<!-- タイトル -->
+<div class="row">
+	<h2 class="col-4 text-center">商品新規登録</h2>
+</div>
+
+<!-- 項目 -->
+<div class="row">
+	<div class="col-4  text-center">
+		<%= form_for(@product) do |image| %>
+			<%= image.attachment_field :image %>
+		<% end %>
+	</div>
+
+	<div class="col-4  text-center">
+		<%= form_with model:@product, url:admins_products_path, method: :post, local: true do |item| %>
+		<span class="col-6">商品名</span><%=  item.text_field :name, class:"col-6" %><br><br>
+		<span class="col-6">商品説明</span><%=  item.text_area :introduction, class:"col-6" %><br><br>
+		<span class="col-6">ジャンル</span><%= item.collection_select :category_id, Category.all, :id, :category_name, prompt: "選択してください", class: 'form-control' %><br><br>
+		<span class="col-6">税抜価格</span><%=  item.text_field :price, class:"col-6" %><br><br>
+		<span class="col-6">販売ステータス</span><%=  item.select :is_active, {'有効': true, '無効': false}, { include_blank: '選択してください'}, { required: true } %><br><br>
+	</div>
+</div>
+
+<!-- 登録ボタン -->
+<div class="row">
+	<div class="col-8"></div>
+	<div class="col-4 text-center">
+		<%= item.submit "新規登録", class: "btn-primary"  %>
+		<% end %>
+	</div>
+</div>

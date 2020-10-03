@@ -1,13 +1,27 @@
 class Admins::ProductsController < ApplicationController
-  def index
-  end
+	def index
+	end
 
-  def new
-  end
+	# 商品新規登録
+	def new
+		@product = Product.new
+	end
 
-  def show
-  end
+	# 商品新規登録
+	def create
+        product = Product.new(product_params)
+        product.save
+        redirect_to admins_products_path
+	end
 
-  def edit
-  end
+	def show
+	end
+
+	def edit
+	end
+
+	private
+	def product_params
+	    params.require(:product).permit(:image, :name, :introduction, :price, :is_active)
+	end
 end
