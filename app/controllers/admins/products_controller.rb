@@ -16,7 +16,9 @@ class Admins::ProductsController < ApplicationController
         redirect_to admins_products_path
 	end
 
+	# 商品詳細画面
 	def show
+		@product = Product.find(params[:id])
 	end
 
 	def edit
