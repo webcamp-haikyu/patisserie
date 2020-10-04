@@ -1,7 +1,10 @@
+// Place all the styles related to the customers::products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 .main-visual {
 	width: 100%;
 	height: 350px;
-	background-image: image-url(‘images/top-cake.jpg’)
+	background-color: gray;
 }
 
 .main-visual-headline {
@@ -25,4 +28,4 @@
 	background-color : #EC715F;
 	height: 150px;
 	width: 100%;
-}
+} 
