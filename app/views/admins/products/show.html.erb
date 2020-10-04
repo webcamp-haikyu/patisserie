@@ -1,17 +1,17 @@
 <div class="container">
 
-<!-- タイトル -->
-<div class="row">
-	<h2 class="col-4 m-4 text-center">商品詳細</h2>
-</div>
+	<!-- タイトル -->
+	<div class="row">
+		<h2 class="col-4 m-4 text-center">商品詳細</h2>
+	</div>
 
 	<div class="row">
-
 		<!-- 画像表示 -->
 		<div class="col-4  text-center">
 			<%= attachment_image_tag @product, :image, :fill, 300, 300, format: 'jpeg' %>
 		</div>
 
+		<!-- 商品詳細 -->
 		<div class="col-4 text-left">
 			<span>商品名&emsp;</span><%= @product.name %><br><br>
 			<span>商品説明&emsp;</span><%= @product.introduction  %><br><br>
@@ -19,15 +19,12 @@
 			<span>税抜価格&emsp;</span><%= @product.price %><br><br>
 			<span>販売ステータス&emsp;</span><%= @product.is_active %><br><br>
 		</div>
-		<div class="col-4 text-center"></div>
 	</div>
 
-<!-- 編集ボタン -->
-<div class="row">
-	<div class="col-8"></div>
-	<div class="col-4 text-center">
-		<%= link_to "編集する", edit_admins_product_path(@product), class:"btn btn-primary" %>
+	<!-- 編集ボタン -->
+	<div class="row">
+		<div class="col-10 text-right">
+			<%= link_to "編集する", edit_admins_product_path(@product), class:"btn btn-primary" %>
+		</div>
 	</div>
-</div>
-
 </div>
