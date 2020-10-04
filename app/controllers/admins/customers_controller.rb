@@ -8,6 +8,7 @@ class Admins::CustomersController < ApplicationController
   end
 
   def index
+    @customers = Customer.all
   end
 
   def show
