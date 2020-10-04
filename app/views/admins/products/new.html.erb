@@ -1,27 +1,22 @@
-<div class="row">
-	<%= form_with model:@product, url:admins_products_path, method: :post, local: true do |item| %>
-	<div class="col-4">test</div>
-	<div class="col-4">test</div>
-	<div class="col-4">test</div>
-	<% end %>
-</div>
-
 <!-- タイトル -->
 <div class="row">
-	<h2 class="col-4 text-center">商品新規登録</h2>
+	<h2 class="col-4 m-4 text-center">商品新規登録</h2>
 </div>
 
 <!-- 項目 -->
 <div class="row">
-	<div class="col-12  text-center">
+	<div class="col-4  text-center">
 		<%= form_with model:@product, url:admins_products_path, method: :post, local: true do |item| %>
 		<%= item.attachment_field :image %><br><br>
-		<span class="col-6">商品名</span><%=  item.text_field :name, class:"col-6" %><br><br>
-		<span class="col-6">商品説明</span><%=  item.text_area :introduction, class:"col-6" %><br><br>
-		<span class="col-6">ジャンル</span><%= item.collection_select :category_id, Category.all, :id, :category_name, prompt: "選択してください", class: 'form-control' %><br><br>
-		<span class="col-6">税抜価格</span><%=  item.text_field :price, class:"col-6" %><br><br>
-		<span class="col-6">販売ステータス</span><%=  item.select :is_active, {'有効': true, '無効': false}, { include_blank: '選択してください'}, { required: true } %><br><br>
 	</div>
+	<div class="col-4 text-center">
+		<span>商品名</span><%=  item.text_field :name %><br><br>
+		<span>商品説明</span><%=  item.text_area :introduction %><br><br>
+		<span>ジャンル</span><%= item.collection_select :category_id, Category.all, :id, :category_name, prompt: "選択してください", class: 'form-control' %><br><br>
+		<span>税抜価格</span><%=  item.text_field :price %><br><br>
+		<span>販売ステータス</span><%=  item.select :is_active, {'有効': true, '無効': false}, { include_blank: '選択してください'}, { required: true } %><br><br>
+	</div>
+	<div class="col-4 text-center"></div>
 </div>
 
 <!-- 登録ボタン -->
