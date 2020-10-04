@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     root 'customers#top'
     resources :customers, only: [:index, :show, :edit, :update]
     resources :products, only: [:index, :new, :create,:show, :edit, :update]
-    resources :categories, only: [:index, :create, :edit, :update]
+    resources :categories, only: [:index, :create, :edit, :update, :destroy]
     resources :orders, only: [:index, :show, :update]
     resources :order_items, only: [:update]
   end
