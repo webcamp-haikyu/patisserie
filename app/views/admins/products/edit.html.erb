@@ -1,6 +1,8 @@
 <!-- タイトル -->
 <div class="row">
-	<h2 class="col-4 m-4 text-center">商品編集</h2>
+	<div class="container">
+		<h2 class="m-4">商品編集</h2>
+	</div>
 </div>
 
 <%= form_with model:@product, url:admins_product_path(@product), method: :patch, local: true do |item| %>

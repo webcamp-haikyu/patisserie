@@ -4,24 +4,23 @@
 <h2 class="m-4">商品一覧</h2>
 <div class="text-right"><%= link_to "+", new_admins_product_path, class:"btn btn-primary" %></div>
 
-<!-- 一覧 -->
-<table class="table">
-	<thead>
-		<th>商品ID</th>
-		<th>商品名</th>
-		<th>税抜価格</th>
-		<th>ジャンル</th>
-		<th>ステータス</th>
-	</thead>
-	<% @products.each do |item| %>
-		<tbody>
-			<td><%= item.id %></td>
-			<td><%= link_to item.name, admins_product_path(item) %></td>
-			<td><%= item.price %></td>
-			<td><%= item.category.category_name %></td>
-			<td><%= item.is_active %></td>
-		</tbody>
-	<% end %>
-</table>
-
+	<!-- 一覧 -->
+	<table class="table">
+		<thead>
+			<th>商品ID</th>
+			<th>商品名</th>
+			<th>税抜価格</th>
+			<th>ジャンル</th>
+			<th>ステータス</th>
+		</thead>
+		<% @products.each do |item| %>
+			<tbody>
+				<td><%= item.id %></td>
+				<td><%= link_to item.name, admins_product_path(item) %></td>
+				<td><%= item.price %></td>
+				<td><%= item.category.category_name %></td>
+				<td><%= item.is_active %></td>
+			</tbody>
+		<% end %>
+	</table>
 </div>
