@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-	attachment :image
-
 	belongs_to :category
+	attachment :image
 end

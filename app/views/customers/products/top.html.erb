@@ -1,71 +1,38 @@
 <div class ="container">
 	<div class = "row mt-5">
-		<div class="col-md-3">
-			<table class="table table-borderless">
-				<tr><th>
-					<div class ="category-border">
-						<p>ジャンル一覧</p>
-					</div>
-				</th></tr>
-				<tr><td>ケーキ</td></tr>
-				<tr><td>焼き菓子</td></tr>
-				<tr><td>プリン</td></tr>
-				<tr><td>キャンディ</td></tr>
-			</table>
+		<div class="col-md-3 col-sm-3">
+			<%= render 'category', categories: @categories %>
 		</div>
 		<div class ="col-md-9">
 			<div class ="main-visual">
-				<div class="main-visual-headline">
-					<h1>ようこそNAGANO CAKEへ</h1>
+				<div class ="main-visual-text">
+					<div class="main-visual-centence">
+						<div class="main-visual-headline">
+							<h1>ようこそNAGANO CAKEへ</h1>
+						</div>
+						<div class="main-centense">
+							<h4>
+								このサイトは、ケーキ販売のECサイトになります。<br>
+								会員でない方も商品の閲覧はできますが、<br>
+								購入には会員登録が必要になります。<br>
+							</h4>
+						</div>
+					</div>
 				</div>
-				<div class="main-centense">
-					<h3>
-						このサイトは、ケーキ販売のECサイトになります。<br>
-						会員でない方も商品の閲覧はできますが、<br>
-						購入には会員登録が必要になります。<br>
-					</h3>
+			</div>
+				<div class="row mt-5">
+					<h2>おすすめ商品</h2>
+				</div>
+			<div class="row mt-2">
+				<% @products.each do |product| %>
+					<%= render 'table', product: product %>
+				<% end %>
+			</div>
+			<div class="row mt-3 mb-5">
+				<div class ="col text-right">
+					<%= link_to "もっと見る＞", products_path %>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="row mt-5">
-		<div class="col-md-9 offset-md-3">
-			<h2>おすすめ商品</h2>
-		</div>
-	</div>
-	<div class="row mt-2 ml-5">
-		<div class="col-md-2 offset-md-3">
-			<div class="reccomend-image">
-			</div>
-			<div class="recommend-cake-name">
-				<h5>ショートケーキ</h5>
-				<p>￥600</p>
-			</div>
-		</div>
-		<div class="col-md-2">
-			<div class="reccomend-image">
-			</div>
-			<div class="recommend-cake-name">
-				<h5>ショートケーキ</h5>
-				<p>￥600</p>
-			</div>
-		</div>
-		<div class="col-md-2">
-			<div class="reccomend-image">
-			</div>
-			<div class="recommend-cake-name">
-				<h5>ショートケーキ</h5>
-				<p>￥600</p>
-			</div>
-		</div>
-		<div class="col-md-2">
-			<div class="reccomend-image">
-			</div>
-			<div class="recommend-cake-name">
-				<h5>ショートケーキ</h5>
-				<p>￥600</p>
-			</div>
-		</div>
-	</div>
-
 </div>

@@ -1,1 +1,29 @@
-<h1>HERE IS PRODUCTS INDEX PAGE</h1>
+<div class ="container">
+	<div class ="row mt-5">
+		<div class="col-md-3">
+			<%= render 'category', categories: @categories %>
+		</div>
+		<div class ="col-md-9">
+
+			<% if params[:category_id] %>
+				<div class ="row ">
+					<div class ="col-md-3">
+						<h2><%= @category.category_name %></h2>
+					</div>
+					<div class="col-md-2">
+						<h4 class ="align">(全<%= @products.count %>件)</h4>
+					</div>
+				</div>
+			<% else %>
+				<h2>商品一覧</h2>
+				<h4>全<%= @products.count %>件</h4>
+			<% end %>
+			
+			<div class="row">
+				<% @products.each do |product| %>
+					<%= render 'table', product: product %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
