@@ -21,7 +21,16 @@ class Admins::ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 	end
 
+	# 商品編集画面
 	def edit
+		@product = Product.find(params[:id])
+	end
+
+	# 商品編集更新
+	def update
+        product = Product.find(params[:id])
+        product.update(product_params)
+        redirect_to admins_product_path(product)
 	end
 
 	private
