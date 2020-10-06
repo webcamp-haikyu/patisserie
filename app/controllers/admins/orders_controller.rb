@@ -1,7 +1,7 @@
 class Admins::OrdersController < ApplicationController
   # 注文履歴一覧
   def index
-  	@cart_products = CartProduct.all
+  	@orders = Order.all
   end
 
   def show
