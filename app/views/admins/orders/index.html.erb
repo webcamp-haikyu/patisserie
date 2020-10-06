@@ -14,8 +14,8 @@
 		<% @orders.each do |history| %>
 			<tbody>
 				<td><%= link_to history.created_at, admins_order_path(history)%></td>
-				<td><%= history.customer.full_name %></td>
-				<td><%= history.order_items.count %></td>
+				<td><%= history.customer.first_name %></td>
+				<td><%=  %></td>
 				<td><%= history.order_status %></td>
 			</tbody>
 		<% end %>
