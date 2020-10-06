@@ -17,7 +17,10 @@
 			<span>商品説明&emsp;</span><%= @product.introduction  %><br><br>
 			<span>ジャンル&emsp;</span><%= @product.category.category_name %><br><br>
 			<span>税抜価格&emsp;</span><%= @product.price %><br><br>
-			<span>販売ステータス&emsp;</span><%= @product.is_active %><br><br>
+			<span>販売ステータス&emsp;</span>
+			<% if @product.is_active == true %>
+				<%= "販売中" %><% else %><%= "売り切れ" %>
+			<% end %><br><br>
 		</div>
 	</div>
 

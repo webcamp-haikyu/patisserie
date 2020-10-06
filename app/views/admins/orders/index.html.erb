@@ -11,12 +11,12 @@
 			<th>注文個数</th>
 			<th>注文ステータス</th>
 		</thead>
-		<% @orders.each do |history| %>
+		<% @orders.each do |buy| %>
 			<tbody>
-				<td><%= link_to history.created_at, admins_order_path(history)%></td>
-				<td><%= history.customer.first_name %></td>
-				<td><%=  %></td>
-				<td><%= history.order_status %></td>
+				<td><%= link_to buy.created_at, admins_order_path(buy)%></td>
+				<td><%= buy.customer.full_name %></td>
+				<td><%= buy.order_count %></td>
+				<td><%= buy.order_status %></td>
 			</tbody>
 		<% end %>
 	</table>
