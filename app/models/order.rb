@@ -11,6 +11,6 @@ class Order < ApplicationRecord
     end
 
     enum order_status:{
-    	"入金待ち":0,入金確認:1,制作中:2,発送準備:3
+    	"入金待ち":0, 入金確認:1, 制作中:2, 発送準備:3
     }
 end
