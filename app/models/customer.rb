@@ -4,5 +4,13 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+<<<<<<< HEAD
   has_many :addresses, dependent: :destroy
+=======
+    has_many :orders, dependent: :destroy
+
+    def full_name
+    	first_name + last_name
+    end
+>>>>>>> admins/orders/index
 end

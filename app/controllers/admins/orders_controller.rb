@@ -1,7 +1,9 @@
 class Admins::OrdersController < ApplicationController
-  def index
-  end
+	# 注文履歴一覧
+	def index
+		@orders = Order.all
+	end
 
-  def show
-  end
+	def show
+	end
 end
