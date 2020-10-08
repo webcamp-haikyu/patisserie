@@ -26,12 +26,12 @@
           <div class="nav-icon">
             <ul class="navbar-nav ">
               <% if customer_signed_in? %>
-                  <li class="nav-item">
+              <!-- カスタマーログイン後 -->
+                <li class="nav-item">
                   <%= link_to "マイページ", customers_my_page_path, class: "nav-link" %>
-                  </li>
-                  <li class="nav-item">
+                </li>
+                <li class="nav-item">
                   <%= link_to "商品一覧", products_path, class: "nav-link" %>
-                  </li>
                 </li>
                 <li class="nav-item">
                   <%= link_to "カート", cart_products_path(:roduct_id), class: "nav-link" %>
@@ -39,8 +39,25 @@
                 <li class="nav-item">
                   <%= link_to "ログアウト", destroy_customer_session_path, class: "nav-link", :method=>:delete %>
                 </li>
-              <% elsif %>
-              <!-- カスタマーログイン後 -->
+              <% elsif admin_signed_in? %>
+              <!-- 管理者のログイン後 -->
+                <li class="nav-item">
+                  <%= link_to "商品一覧", admins_products_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "会員一覧", admins_customers_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "注文履歴一覧", admins_orders_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ジャンル一覧", admins_categories_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログアウト", destroy_admin_session_path, class: "nav-link", :method=>:delete %>
+                </li>
+              <% else %>
+              <!-- ログイン前 -->
                 <li class="nav-item">
                   <%= link_to "About", about_path, class: "nav-link" %>
                 </li>
@@ -52,23 +69,6 @@
                 </li>
                 <li class="nav-item">
                   <%= link_to "ログイン", new_customer_session_path, class: "nav-link" %>
-                </li>
-              <% else %>
-              <!-- 管理者のログイン後 -->
-                <li class="nav_item">
-                  <%= link_to "商品一覧", admins_products_path, class:"nav_link" %>
-                </li>
-                <li class="nav_item">
-                  <%= link_to "会員一覧", admins_customers_path, class:"nav_link" %>
-                </li>
-                <li class="nav_item">
-                  <%= link_to "注文履歴一覧", admins_orders_path, class:"nav_link" %>
-                </li>
-                <li class="nav_item">
-                  <%= link_to "ジャンル一覧", admins_categorices_path, class:"nav_link" %>
-                </li>
-                <li class="nav_item">
-                  <%= link_to "ログアウト", destroy_admin_session_path, class: "nav_link", :method=>:delete %>
                 </li>
               <% end %>
             </ul>
