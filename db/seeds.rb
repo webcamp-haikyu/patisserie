@@ -5,7 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-<<<<<<< HEAD
+
+OrderItem.create!(
+	product_id: "1",
+	order_id: "1",
+	quantity: "5"
+)
 Category.create!(
 	category_name: '生菓子',
 	is_active: "true"
@@ -18,20 +23,19 @@ Product.create!(
 	category_id: '1',
 	name: 'ケーキ',
 	introduction: '美味しい',
-	price: '8000',
+	price: '300',
 	is_active: 'true',
 	image: open('./app/assets/images/cake-image.jpg')
 	)
 
 Product.create!(
 	category_id: '2',
-	name: 'ケーキ２',
-	introduction: '美味しい２',
-	price: '8002',
+	name: 'モンブラン',
+	introduction: 'まずい',
+	price: '560',
 	is_active: 'true',
 	image: open('./app/assets/images/cake-image.jpg')
 	)
-=======
 Order.create!(
 	customer_id: "1",
 	payment_method: "0",
@@ -43,4 +47,4 @@ Order.create!(
 	created_at: "",
 	updated_at: ""
 )
->>>>>>> admins/orders/index
+
