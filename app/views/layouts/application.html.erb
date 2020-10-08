@@ -15,8 +15,9 @@
             <%= link_to "NAGANO CAKE",root_path %>
           </h4>
         </ul>
-        <!-- サインイン後に名前出るようにあとで修正します -->
-        <p class="navbar-text navbar-right">ようこそゲストさん</p>
+        <% if customer_signed_in? %>
+          <p class="navbar-text navbar-right">ようこそ<%= current_customer.last_name+current_customer.first_name %>さん</p>
+        <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,7 +34,7 @@
                   </li>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "カート", cart_products_path, class: "nav-link" %>
+                  <%= link_to "カート", product_cart_products_path(:roduct_id), class: "nav-link" %>
                 </li>
                 <li class="nav-item">
                   <%= link_to "ログアウト", destroy_customer_session_path, class: "nav-link", :method=>:delete %>

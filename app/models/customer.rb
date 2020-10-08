@@ -4,12 +4,21 @@ class Customer < ApplicationRecord
 	devise :database_authenticatable, :registerable,
 	     :recoverable, :rememberable, :validatable
 
-  	acts_as_paranoid
+  has_many :addresses, dependent: :destroy
+  has_many :cart_products, dependent: :destroy
+  has_many :orders, dependent: :destroy
+  
+  def total
+		total = 0
+		cart_products.each do |cart_product|
+			total += cart_product.sub_total
+		end
+		total
+	end
 
-    has_many :addresses, dependent: :destroy
-    has_many :orders, dependent: :destroy
-
-    def full_name
-    	first_name + last_name
-    end
+  acts_as_paranoid
+  
+  def full_name
+    first_name + last_name
+  end
 end
