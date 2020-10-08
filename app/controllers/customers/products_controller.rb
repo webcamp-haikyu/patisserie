@@ -15,6 +15,8 @@ class Customers::ProductsController < ApplicationController
 	end
 
 	def show
+		@product = Product.find(params[:id])
+		@categories = Category.all
 	end
 
 	def about

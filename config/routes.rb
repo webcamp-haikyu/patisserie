@@ -22,14 +22,16 @@ Rails.application.routes.draw do
 
   scope module: :customers do
     root 'products#top'
-    resources :customers, only:[ :update]
+    resources :customers do
+      collection do
+        get 'check'
+        patch 'withdrawal'
+      end
+    end
     get 'customers/my_page' => 'customers#show'
-    get 'customers' => 'customers#check'
     get 'customers/edit' => 'customers#edit'
     patch 'customers' => 'customers#update'
-    patch 'customers/withdrawal' => 'customers#withdrawal'
     resources :products, only: [:index, :show]
-    get "products/:id" => 'products#index'
     get 'about' => 'products#about'
     resources :cart_products, only: [:index, :create, :destroy, :update]
     delete 'cart_products/destroy_all' => 'cart_products#destroy_all'

@@ -1,7 +1,7 @@
 <div class="col-md-3 col-sm-4">
 	<div class="reccomend-image">
 		<%= link_to product_path(product.id) do %>
-			<%=link_to attachment_image_tag product, :image, :fill, 200,150 %>
+			<%= attachment_image_tag product, :image, :fill, 200,150 %>
 		<% end %>
 	</div>
 	<div class="recommend-cake-name">
