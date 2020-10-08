@@ -67,3 +67,4 @@ gem "refile-mini_magick"
 
 gem 'devise'
 gem 'pry-byebug'
+gem "paranoia", "~> 2.2"
