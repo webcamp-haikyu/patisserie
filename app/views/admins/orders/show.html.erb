@@ -47,10 +47,10 @@
   	  	<% @order_items.each do |order_item| %>
   	  	<tr>
   	  	  <td><%= order_item.product.name %></td>
-  	  	  <td><%= order_item.product.included_tax %>円</td>
+  	  	  <td><%= order_item.product.include_tax %>円</td>
   	  	  <td><%= order_item.quantity %></td>
-          <% @sum += order_item.product.included_tax * order_item.quantity  %>
-  	  	  <td><%= order_item.product.included_tax * order_item.quantity  %>円</td>
+          <% @sum += order_item.product.include_tax * order_item.quantity  %>
+  	  	  <td><%= order_item.product.include_tax * order_item.quantity  %>円</td>
   	  	  <%= form_for(order_item, url: admins_order_item_path(order_item), method: :patch) do |f| %>
   	  	    <td><%= f.select :making_status, {"着手不可": 0,"制作待ち": 1,"制作中": 2,"制作完了": 3} %></td>
   	  	    <td><%= f.submit '更新', class: "btn btn-warning" %></td>
