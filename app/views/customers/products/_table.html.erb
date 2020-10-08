@@ -1,0 +1,11 @@
+<div class="col-md-3 col-sm-4">
+	<div class="reccomend-image">
+		<%= link_to product_path(product.id) do %>
+			<%= attachment_image_tag product, :image, :fill, 200, 150 %>
+		<% end %>
+	</div>
+	<div class="recommend-cake-name">
+		<h5><%= product.name %></h5>
+		<p>￥<%= product.price %></p>
+	</div>
+</div>

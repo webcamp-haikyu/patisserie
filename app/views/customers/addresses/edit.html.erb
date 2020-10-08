@@ -1,2 +1,51 @@
-<h1>Customers::Addresses#edit</h1>
-<p>Find me in app/views/customers/addresses/edit.html.erb</p>
+<div class ="container">
+
+<!--ーエラーメッセージ-->
+    <% if @address.errors.any? %>
+        <div id="error_explanation">
+          <h3><%= @address.errors.count %>error prohibited this obj from being saved:</h3>
+          <ul>
+            <% @address.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+<!--ーエラーメッセージ-->
+
+  <div class ="row mt-5">
+    <div class ="col-md-10 offset-md-1">
+      <h2>配送先編集</h2>
+    </div>
+  </div>
+
+
+<%= form_with(model:@address, local:true) do |f| %>
+
+  <div class="row">
+    <div class="col">
+<!-- 郵便番号 -->
+    <div class="field">
+      <%= f.label :post_code, '郵便番号(ハイフンなし)' %>
+      <%= f.text_field :post_code, autofocus: true %>
+    </div>
+<!--住所-->
+    <div class="field">
+      <%= f.label :address, '住所' %>
+      <%= f.text_field :address %>
+    </div>
+<!--住所-->
+<!--宛名-->
+    <div class="field">
+      <%= f.label :name, '宛名' %>
+      <%= f.text_field :name %>
+    </div>
+<!--宛名-->
+<!--編集ボタン-->
+  <div class="actions row">
+    <%= f.submit "編集する" ,class: "btn btn-primary col-md-2" %>
+  </div>
+
+<% end %>
+
+</div>
