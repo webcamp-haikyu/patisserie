@@ -8,6 +8,7 @@ class Customer < ApplicationRecord
   has_many :cart_products, dependent: :destroy
   has_many :orders, dependent: :destroy
 
+
   # 送料抜きの合計金額
   def total
 		total = 0
@@ -27,6 +28,13 @@ class Customer < ApplicationRecord
   end
 
   def full_name
-    last_name+ " " +first_name
+    "#{self.last_name} #{self.first_name}"
   end
+
+  def full_name_kana
+  	"#{self.last_name_kana} #{self.first_name_kana}"
+  end
+  
+  acts_as_paranoid
 end
+

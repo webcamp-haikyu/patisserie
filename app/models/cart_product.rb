@@ -6,7 +6,4 @@ class CartProduct < ApplicationRecord
 	def sub_total
     product.include_tax * quantity
   end
-
-  
-	
 end

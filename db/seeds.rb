@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+OrderItem.create!(
+	product_id: "1",
+	order_id: "1",
+	quantity: "5"
+)
+
 Category.create!(
 	category_name: '生菓子',
 	is_active: "true"
@@ -18,19 +25,20 @@ Product.create!(
 	category_id: '1',
 	name: 'ケーキ',
 	introduction: '美味しい',
-	price: '8000',
+	price: '300',
 	is_active: 'true',
 	image: open('./app/assets/images/cake-image.jpg')
 	)
 
 Product.create!(
 	category_id: '2',
-	name: 'ケーキ２',
-	introduction: '美味しい２',
-	price: '8002',
+	name: 'モンブラン',
+	introduction: 'まずい',
+	price: '560',
 	is_active: 'true',
 	image: open('./app/assets/images/cake-image.jpg')
 	)
+
 Customer.create!(
 	password: 'something',
 	email: "email@email.com",
@@ -76,3 +84,16 @@ Address.create!(
 	address: '神奈川県千葉市千葉',
 	post_code: '2111111'
 	)
+
+Order.create!(
+	customer_id: "1",
+	payment_method: "0",
+	delivery_fee: "0",
+	order_status: "入金待ち",
+	post_code: "test",
+	address: "test",
+	name: "test",
+	created_at: "",
+	updated_at: ""
+)
+

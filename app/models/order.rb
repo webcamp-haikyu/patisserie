@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+
 	has_many :order_item, dependent: :destroy
 	belongs_to :customer
 
@@ -8,4 +9,15 @@ class Order < ApplicationRecord
 	attribute :delivery_fee, :integer, default: 800
 
 
+  def shipping_address
+  	"#{self.post_code} #{self.address}"
+  end
+
+  def order_count
+  	sum = 0
+  	self.order_items.each do |order_item|
+  	  sum += order_item.quantity
+  	end
+  	return sum
+  end
 end
