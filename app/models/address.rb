@@ -6,4 +6,8 @@ class Address < ApplicationRecord
   validates :address, presence: true
   validates :name, presence: true, length: {maximum: 20, minimum: 2}
 
+  def full_receiver_address
+  	post_code+" "+address+" "+name
+  end
 end
+

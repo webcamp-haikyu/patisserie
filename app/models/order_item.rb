@@ -1,7 +1,8 @@
 class OrderItem < ApplicationRecord
 
-  belongs_to :order
-  belongs_to :product
+	belongs_to :order, optional: true
+	belongs_to :product
+ 	enum create_status: [:着手不可, :製作待ち ,:制作中 ,:制作完了]
 
-  enum making_status: {"着手不可": 0,"制作待ち": 1,"制作中": 2,"制作完了": 3}
+
 end
