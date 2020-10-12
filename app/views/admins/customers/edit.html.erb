@@ -2,7 +2,7 @@
   <div class='row pt-5'>
     <h3><%= @customer.full_name %>さんの会員情報編集</h3>
   </div>
-  <%= form_for(@customer) do |f| %>
+  <%= form_for(@customer, url: admins_customer_path) do |f| %>
 　　　　<!-- 会員ID -->
     <div class='row pt-3'>
       <span class='col-2'>会員ID</span>

@@ -9,26 +9,36 @@ class Admins::CustomersController < ApplicationController
   end
 
   def index
-    @customers = Customer.all
+    @customers = Customer.with_deleted.all
   end
 
   def show
-    @customer = Customer.find(params[:id])
+    @customer = Customer.with_deleted.find(params[:id])
   end
 
   def edit
-    @customer = Customer.find(params[:id])
+    @customer = Customer.with_deleted.find(params[:id])
   end
 
   def update
-    @customer = Customer.find(params[:id])
+    @customer = Customer.with_deleted.find(params[:id])
+    logger.debug(params[:customer][:is_active])
+    logger.debug(1111111111)
+    if params[:customer][:is_active] == "true"
+       @customer.restore
+    else
+       @customer.destroy
+    end
+
     if @customer.update(customer_params)
        flash[:success] = "会員情報を変更しました"
-       redirect_to admin_customer_path
+       redirect_to admins_customer_path
     else
        render "edit"
     end
   end
+
+
 
   private
 
