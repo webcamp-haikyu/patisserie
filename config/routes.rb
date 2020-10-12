@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:index, :create, :edit, :update, :destroy]
     resources :orders, only: [:index, :show, :update]
     resources :order_items, only: [:update]
+    get 'search' => 'searches#search'
   end
 
   devise_for :customers, controllers: {
@@ -40,6 +41,7 @@ Rails.application.routes.draw do
     get 'orders/complete' => 'orders#complete'
     resources :orders, only:[:new, :create,:index, :show]
     resources :addresses, only: [:create, :index, :edit, :update, :destroy]
+    get 'search' => 'searches#search'
   end
 
 
