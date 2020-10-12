@@ -18,7 +18,7 @@
 				<h2>商品一覧</h2>
 				<h4>全<%= @products.count %>件</h4>
 			<% end %>
-			
+
 			<div class="row">
 				<% @products.each do |product| %>
 					<%= render 'table', product: product %>
