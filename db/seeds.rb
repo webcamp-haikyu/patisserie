@@ -25,7 +25,7 @@ Product.create!(
 	category_id: '1',
 	name: 'ケーキ',
 	introduction: '美味しい',
-	price: '300',
+	price: '4200',
 	is_active: 'true',
 	image: open('./app/assets/images/cake-image.jpg')
 	)
@@ -33,12 +33,44 @@ Product.create!(
 Product.create!(
 	category_id: '2',
 	name: 'モンブラン',
-	introduction: 'まずい',
-	price: '560',
+	introduction: '高千穂産の和栗を丁寧に裏ごしたマロンペーストと甘さ控えめの軽い生クリームを合わせました',
+	price: '800',
 	is_active: 'true',
 	image: open('./app/assets/images/cake-image.jpg')
 	)
+Product.create!(
+	category_id: '2',
+	name: 'チョコレートムース',
+	introduction: '濃厚なチョコレートムースと、オレンジのお酒の効いた大人のケーキ',
+	price: '620',
+	is_active: 'true',
+	image: open('./app/assets/images/cake-image-2.jpg')
+	)
 
+Product.create!(
+	category_id: '2',
+	name: 'キャンディ',
+	introduction: '苺味の可愛らしいキャンディ',
+	price: '560',
+	is_active: 'true',
+	image: open('./app/assets/images/cake-image-3.jpg')
+	)
+Product.create!(
+	category_id: '2',
+	name: 'ブルーベリータルト',
+	introduction: '国産ブルーベリーをふんだんに使用した贅沢なケーキ',
+	price: '4000',
+	is_active: 'true',
+	image: open('./app/assets/images/cake-image-4.jpg')
+	)
+Product.create!(
+	category_id: '2',
+	name: 'シュークリーム',
+	introduction: '生クリームとカスタードクリームをたっぷり詰めました',
+	price: '400',
+	is_active: 'true',
+	image: open('./app/assets/images/cake-image-5.jpg')
+	)
 Customer.create!(
 	password: 'something',
 	email: "email@email.com",
@@ -56,12 +88,16 @@ Customer.create!(
 	email: "name@name.com",
 	first_name: 'あ',
 	last_name: "あ",
-	first_name_kana: "あ",
-	last_name_kana: "あ",
+	first_name_kana: "ア",
+	last_name_kana: "ア",
 	post_code: "1234567",
 	address:"東京都千代田区永田町1-1-1",
 	phone_number: "08011111111",
  	is_active: "true"
+	)
+Admin.create!(
+	password: 'something',
+	email: 'name@name.com'
 	)
 
 Address.create!(
@@ -84,16 +120,4 @@ Address.create!(
 	address: '神奈川県千葉市千葉',
 	post_code: '2111111'
 	)
-
-Order.create!(
-	customer_id: "1",
-	payment_method: "0",
-	delivery_fee: "0",
-	order_status: "入金待ち",
-	post_code: "test",
-	address: "test",
-	name: "test",
-	created_at: "",
-	updated_at: ""
-)
 
