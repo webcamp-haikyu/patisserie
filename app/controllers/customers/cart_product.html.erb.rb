@@ -11,14 +11,12 @@ class Customers::CartProductsController < ApplicationController
   	# カートプロダクトに追加したい商品が入ってない場合
   	unless @cart_products.exists?(product_id: params[:product_id])
   		cart_product = @cart_products.new(cart_product_params)
-
   		if cart_product.save
   		  redirect_to product_cart_products_path
       else
         flash[:alert] = "個数を指定してください"
         redirect_to product_path(params[:product_id])
       end
-
   	# すでに入ってた場合
   	else
   		cart_product = CartProduct.find_by(customer_id: current_customer.id, product_id: params[:product_id])

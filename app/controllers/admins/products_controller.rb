@@ -12,9 +12,12 @@ class Admins::ProductsController < ApplicationController
 
 	# 商品新規登録
 	def create
-        product = Product.new(product_params)
-        product.save
-        redirect_to admins_products_path
+        @product = Product.new(product_params)
+        if @product.save
+        	redirect_to admins_products_path
+        else
+        	render :new
+    	end
 	end
 
 	# 商品詳細画面
