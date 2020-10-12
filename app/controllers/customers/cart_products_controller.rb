@@ -10,7 +10,7 @@ class Customers::CartProductsController < ApplicationController
   	unless @cart_products.exists?(product_id: params[:product_id])
   		cart_product = @cart_products.new(cart_product_params)
   		cart_product.save
-  		redirect_to product_cart_products_path
+  		redirect_to cart_products_path
   	# すでに入ってた場合
   	else
   		cart_product = CartProduct.find_by(customer_id: current_customer.id, product_id: params[:product_id])
