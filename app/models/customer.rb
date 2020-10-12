@@ -8,6 +8,19 @@ class Customer < ApplicationRecord
   has_many :cart_products, dependent: :destroy
   has_many :orders, dependent: :destroy
 
+  with_options presence: true do
+    validates :email, format: {with: /\A\S+@\S+\.\S+\z/,message: 'が正しくありません'}
+    validates :post_code, format: {with: /\A\d{7}\z/,message: 'が正しくありません'}
+    validates :phone_number, format: {with: /\A\d{10,11}\z/,message: 'が正しくありません'}
+    with_options format: {with: /\A[ぁ-んァ-ン一-龥]/, message: 'は漢字,ひらがな,カタカナのいずれかで入力してください'}do
+      validates :first_name
+      validates :last_name
+    end
+    with_options format: {with: /\A[ァ-ヶー－]+\z/,message: 'はカタカナで入力してください'}do
+      validates :first_name_kana
+      validates :last_name_kana
+    end
+  end
 
   # 送料抜きの合計金額
   def total

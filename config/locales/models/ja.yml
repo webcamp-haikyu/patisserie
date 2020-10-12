@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      customer: ユーザー
+    attributes:
+      customer:
+        last_name: 姓
+        first_name: 名
+        last_name_kana: セイ
+        first_name_kana: メイ
+        password: パスワード
+        post_code: 郵便番号
+        password_confirmation: 確認用パスワード
+        email: メールアドレス
+        phone_number: 電話番号
+
+      category:
+        category_name: ジャンル名

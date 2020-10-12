@@ -1,5 +1,5 @@
 class CartProduct < ApplicationRecord
-	belongs_to :product
+	belongs_to :product, optional: true
 	belongs_to :customer
 	validates :quantity, numericality: true
 
