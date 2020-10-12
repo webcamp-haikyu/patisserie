@@ -9,9 +9,9 @@
 	</div>
 	<div class='col-2'>
 	  <%= @customer.id %>
-	  <% if @customer.is_active == true %>
+	  <% if @customer.deleted_at == nil %>
 	    <span> <i class="fas fa-bullseye blue"></i> 有効会員
-	  <%elsif @customer.is_active == false %>
+	  <% else %>
 	   	<i class="fas fa-bullseye blue"></i> 退会済</span>
 	  <% end %>
 	</div>

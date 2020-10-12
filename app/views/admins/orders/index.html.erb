@@ -17,7 +17,7 @@
         <td><%= history.customer.full_name %></td>
         <td>
           <% @sum = 0 %>
-          <% history.order_items.each do |count|%>
+          <% history.order_item.each do |count|%>
             <% @sum += count.quantity %>
           <% end %>
           <%= @sum %>

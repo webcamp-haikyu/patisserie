@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
 Category.create!(
 	category_name: '生菓子',
 	is_active: "true"
