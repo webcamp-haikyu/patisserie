@@ -9,7 +9,7 @@
   	  	  <th class="text-left">会員ID</th>
   	  	  <th class="text-left">氏名</th>
   	  	  <th>メールアドレス</th>
-  	  	  <th>ステータス</th>
+  	  	  <th>会員ステータス</th>
   	  	</tr>
   	  </thead>
   	  <tbody>
@@ -27,10 +27,10 @@
               <%= customer.email %>
             </td>
             <td>
-              <% if customer.is_active == true %>
+              <% if customer.deleted_at == nil %>
                 <p>有効</p>
               <% else %>
-                <p>無効</p>
+                <p>退会済み</p>
               <% end %>
             </td>
   	  	  </tr>

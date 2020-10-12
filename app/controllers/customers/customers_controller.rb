@@ -16,6 +16,7 @@ class Customers::CustomersController < ApplicationController
   	# ユーザー退会
   	def withdrawal
 		current_customer.destroy
+		current_customer.update(is_active: false)
 		redirect_to root_path
   	end
 

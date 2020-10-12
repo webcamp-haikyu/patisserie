@@ -13,7 +13,7 @@
     <% end %>
 <!--ーエラーメッセージ-->
 
-  <div class ="row mt-5">
+  <div class ="row pt-5">
     <div class ="col-md-10 offset-md-1">
       <h2>配送先編集</h2>
     </div>
@@ -21,29 +21,40 @@
 
 
 <%= form_with(model:@address, local:true) do |f| %>
-
-  <div class="row">
-    <div class="col">
 <!-- 郵便番号 -->
-    <div class="field">
+  <div class="row pt-3">
+    <div class="col-3">
       <%= f.label :post_code, '郵便番号(ハイフンなし)' %>
+    </div>
+    <div class="col-9">
       <%= f.text_field :post_code, autofocus: true %>
     </div>
+  </div>
 <!--住所-->
-    <div class="field">
+  <div class="row pt-3">
+    <div class="col-3">
       <%= f.label :address, '住所' %>
-      <%= f.text_field :address %>
     </div>
+    <div class="col-6">
+      <%= f.text_field :address, :size=>"50" %>
+    </div>
+  </div>
 <!--住所-->
 <!--宛名-->
-    <div class="field">
+  <div class="row pt-3">
+    <div class="col-3">
       <%= f.label :name, '宛名' %>
+    </div>
+    <div class="col-6">
       <%= f.text_field :name %>
     </div>
+  </div>
 <!--宛名-->
 <!--編集ボタン-->
   <div class="actions row">
-    <%= f.submit "編集する" ,class: "btn btn-primary col-md-2" %>
+    <div class='col-12 text-right'>
+      <%= f.submit "編集する" ,class: "btn btn-primary col-md-2" %>
+    </div>
   </div>
 
 <% end %>

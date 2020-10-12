@@ -6,13 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-OrderItem.create!(
-	product_id: "1",
-	order_id: "1",
-	quantity: "5"
-)
-
 Category.create!(
 	category_name: '生菓子',
 	is_active: "true"
