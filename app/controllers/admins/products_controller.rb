@@ -1,4 +1,5 @@
 class Admins::ProductsController < ApplicationController
+	before_action :authenticate_admin!
 	# 商品一覧
 	def index
 		@products = Product.all
@@ -17,7 +18,6 @@ class Admins::ProductsController < ApplicationController
         else
         	render :new
     	end
-
 	end
 
 	# 商品詳細画面

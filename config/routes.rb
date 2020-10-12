@@ -31,13 +31,14 @@ Rails.application.routes.draw do
     get 'customers/my_page' => 'customers#show'
     get 'customers/edit' => 'customers#edit'
     patch 'customers' => 'customers#update'
-    resources :products, only: [:index, :show]
     get 'about' => 'products#about'
-    resources :cart_products, only: [:index, :create, :destroy, :update]
     delete 'cart_products/destroy_all' => 'cart_products#destroy_all'
-    resources :orders, only:[:new, :create,:index, :show]
+    resources :products, only: [:index, :show] do
+      resources :cart_products, only: [:index, :create, :destroy, :update]
+    end
     get 'orders/confirm' => 'orders#confirm'
     get 'orders/complete' => 'orders#complete'
+    resources :orders, only:[:new, :create,:index, :show]
     resources :addresses, only: [:create, :index, :edit, :update, :destroy]
   end
 

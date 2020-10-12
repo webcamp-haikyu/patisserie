@@ -29,7 +29,7 @@
 							</td>
 							<td><%= cart_product.product.include_tax.to_s(:delimited) %></td>
 							<td>
-								<%= form_with model:[cart_product.product, cart_product], url: cart_product_path(cart_product.product, cart_product), method: :patch do |f| %>
+								<%= form_with model:[cart_product.product, cart_product], url: product_cart_product_path(cart_product.product, cart_product), method: :patch do |f| %>
                 	<%= f.number_field :quantity, min: 1 %>
                 	<button type = "submit" class="btn btn-primary">変更</button>
               	<% end %>
