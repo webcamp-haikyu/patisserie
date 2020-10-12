@@ -15,6 +15,19 @@
             <%= link_to "NAGANO CAKE",root_path %>
           </h4>
         </ul>
+        <div class ="search-box">
+          <% if admin_signed_in? %>
+            <%= form_tag(admins_search_path, method: :get) do %>
+              <%= text_field_tag (:word) %>
+              <%= submit_tag "検索" %>
+            <% end %>
+          <% else %>
+            <%= form_tag(search_path, method: :get) do %>
+              <%= text_field_tag (:word) %>
+              <%= submit_tag "検索" %>
+            <% end %>
+          <% end %>
+        </div>
         <% if customer_signed_in? %>
           <p class="navbar-text navbar-right">ようこそ<%= current_customer.last_name+current_customer.first_name %>さん</p>
         <% end %>

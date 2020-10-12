@@ -47,6 +47,11 @@ class Customer < ApplicationRecord
   def full_name_kana
   	"#{self.last_name_kana} #{self.first_name_kana}"
   end
+
+
+  def self.search(word)
+    @customer = Customer.where(["last_name LIKE? OR first_name LIKE? OR first_name_kana LIKE? OR last_name_kana LIKE?","%#{word}%","%#{word}%","%#{word}%","%#{word}%"])
+  end
   
   acts_as_paranoid
 end

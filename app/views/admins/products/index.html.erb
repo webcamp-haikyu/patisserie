@@ -1,10 +1,17 @@
 <div class="container">
 
 <!-- タイトル -->
-<h2 class="m-4">商品一覧</h2>
-<div class="text-right"><%= link_to "+", new_admins_product_path, class:"btn btn-primary" %></div>
+<div class ="row mt-5">
+	<div class="col-md-11">
+		<h2>商品一覧</h2>
+	</div>
+	<div class="col-md-1">
+		<div class="text-right"><%= link_to "+", new_admins_product_path, class:"btn btn-primary" %></div>
+	</div>
+</div>
 
 	<!-- 一覧 -->
+<div class="row mt-3">
 	<table class="table">
 		<thead>
 			<th>商品ID</th>
