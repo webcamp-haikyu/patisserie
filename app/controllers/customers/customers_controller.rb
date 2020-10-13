@@ -9,6 +9,9 @@ class Customers::CustomersController < ApplicationController
     redirect_to customers_my_page_path
   end
 
+  def index
+  end
+
   	# ユーザー退会画面
   	def check
   	end

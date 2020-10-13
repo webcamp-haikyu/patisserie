@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  
+
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
   registrations: 'admins/registrations'
   }
   namespace :admins do
-    root 'customers#top'
+    get 'admins/top' => 'admins#top'
     resources :customers, only: [:index, :show, :edit, :update]
     resources :products, only: [:index, :new, :create,:show, :edit, :update]
     resources :categories, only: [:index, :create, :edit, :update, :destroy]
@@ -15,14 +15,19 @@ Rails.application.routes.draw do
     get 'search' => 'searches#search'
   end
 
+  root 'customers/products#top'
+
+  get 'customers/about' => 'customers/products#about'
+
+
   devise_for :customers, controllers: {
-  sessions:      'customers/sessions',
-  passwords:     'customers/passwords',
-  registrations: 'customers/registrations'
-  }
+    registrations: 'customers/registrations',
+    sessions:      'customers/sessions',
+    passwords:     'customers/passwords'
+    }
 
   scope module: :customers do
-    root 'products#top'
+
     resources :customers do
       collection do
         get 'check'
@@ -32,7 +37,6 @@ Rails.application.routes.draw do
     get 'customers/my_page' => 'customers#show'
     get 'customers/edit' => 'customers#edit'
     patch 'customers' => 'customers#update'
-    get 'about' => 'products#about'
     delete 'cart_products/destroy_all' => 'cart_products#destroy_all'
     resources :products, only: [:index, :show] do
       resources :cart_products, only: [:index, :create, :destroy, :update]
