@@ -8,24 +8,33 @@
 
 
 Category.create!(
-	category_name: '生菓子',
+	category_name: 'ケーキ',
+	is_active: "true"
+	)
+Category.create!(
+	category_name: 'プリン',
 	is_active: "true"
 	)
 Category.create!(
 	category_name: '焼き菓子',
 	is_active: "true"
 	)
+Category.create!(
+	category_name: 'キャンディ',
+	is_active: "true"
+	)
+
 Product.create!(
 	category_id: '1',
 	name: 'ケーキ',
 	introduction: '美味しい',
 	price: '4200',
 	is_active: 'true',
-	image: open('./app/assets/images/cake-image.jpg')
+	image: open('./app/assets/images/cake-image-6.jpg')
 	)
 
 Product.create!(
-	category_id: '2',
+	category_id: '1',
 	name: 'モンブラン',
 	introduction: '高千穂産の和栗を丁寧に裏ごしたマロンペーストと甘さ控えめの軽い生クリームを合わせました',
 	price: '800',
@@ -33,7 +42,7 @@ Product.create!(
 	image: open('./app/assets/images/cake-image.jpg')
 	)
 Product.create!(
-	category_id: '2',
+	category_id: '1',
 	name: 'チョコレートムース',
 	introduction: '濃厚なチョコレートムースと、オレンジのお酒の効いた大人のケーキ',
 	price: '620',
@@ -42,7 +51,7 @@ Product.create!(
 	)
 
 Product.create!(
-	category_id: '2',
+	category_id: '4',
 	name: 'キャンディ',
 	introduction: '苺味の可愛らしいキャンディ',
 	price: '560',
@@ -50,7 +59,7 @@ Product.create!(
 	image: open('./app/assets/images/cake-image-3.jpg')
 	)
 Product.create!(
-	category_id: '2',
+	category_id: '1',
 	name: 'ブルーベリータルト',
 	introduction: '国産ブルーベリーをふんだんに使用した贅沢なケーキ',
 	price: '4000',
@@ -58,13 +67,31 @@ Product.create!(
 	image: open('./app/assets/images/cake-image-4.jpg')
 	)
 Product.create!(
-	category_id: '2',
+	category_id: '1',
 	name: 'シュークリーム',
 	introduction: '生クリームとカスタードクリームをたっぷり詰めました',
 	price: '400',
 	is_active: 'true',
 	image: open('./app/assets/images/cake-image-5.jpg')
 	)
+Product.create!(
+	category_id: '2',
+	name: 'プリン',
+	introduction: '濃厚プリン',
+	price: '400',
+	is_active: 'true',
+	image: open('./app/assets/images/cake-image-7.jpg')
+	)
+Product.create!(
+	category_id: '3',
+	name: 'クッキー',
+	introduction: 'サクサククッキー',
+	price: '600',
+	is_active: 'true',
+	image: open('./app/assets/images/cake-image-8.jpg')
+	)
+
+
 Customer.create!(
 	password: 'something',
 	email: "email@email.com",

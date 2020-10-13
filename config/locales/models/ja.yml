@@ -1,7 +1,7 @@
 ja:
   activerecord:
     models:
-      customer: ユーザー
+      customer: カスタマー
     attributes:
       customer:
         last_name: 姓
@@ -13,17 +13,11 @@ ja:
         password_confirmation: 確認用パスワード
         email: メールアドレス
         phone_number: 電話番号
-    attributes:
       product:
         name: 商品名
         category: カテゴリー
         introduction: 説明文
         price: 税抜価格
         image: 画像
-    attributes:
       category:
-        category_name: カテゴリー名
-
-
-
-
+        category: カテゴリー

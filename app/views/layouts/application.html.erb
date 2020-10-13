@@ -71,19 +71,9 @@
         </nav>
       </div>
     </header>
-    <div class ="search-box">
-        <% if admin_signed_in? %>
-          <%= form_tag(admins_search_path, method: :get) do %>
-            <%= text_field_tag (:word) %>
-            <%= submit_tag "検索" %>
-          <% end %>
-        <% else %>
-          <%= form_tag(search_path, method: :get) do %>
-            <%= text_field_tag (:word) %>
-            <%= submit_tag "検索" %>
-          <% end %>
-        <% end %>
-      </div>
+    <% if admin_signed_in? %>
+      <%= render 'admins/searches/box' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
