@@ -25,7 +25,7 @@
     <div class='row pt-3'>
 	  <span class='col-2'>注文ステータス</span>
 	  <div class='col-4'>
-	    <%= f.select :order_status, {"入金待ち": 0,"入金確認": 1,"製作中": 2,"発送準備中": 3, "発送済み": 4} %>
+	    <%= f.select :order_status, Order.order_statuses.keys,{}%>
 	    <%= f.submit '更新', class: "btn btn-primary" %>
 	  </div>
 	</div>
@@ -52,7 +52,7 @@
           <% @sum += order_item.product.include_tax * order_item.quantity  %>
   	  	  <td><%= order_item.product.include_tax * order_item.quantity  %>円</td>
   	  	  <%= form_for(order_item, url: admins_order_item_path(order_item), method: :patch) do |f| %>
-  	  	    <td><%= f.select :making_status, {"着手不可": 0,"制作待ち": 1,"制作中": 2,"制作完了": 3} %></td>
+  	  	    <td><%= f.select :making_status, OrderItem.making_statuses.keys, :selected => order_item.making_status %></td>
   	  	    <td><%= f.submit '更新', class: "btn btn-warning" %></td>
   	  	  <% end %>
   	  	</tr>
