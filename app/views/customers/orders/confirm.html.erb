@@ -26,6 +26,7 @@
 								<%= cart_product.quantity %>
 							</td>
 							<td>
+								<!-- sub_total/商品x個数の金額　cartproductモデルに記入-->
 								<%= cart_product.sub_total.to_s(:delimited) %>
 							</td>
 						</tr>
@@ -45,6 +46,7 @@
 							<td><%= @customer.total.to_s(:delimited) %></td>
 						</tr>
 						<tr>
+							<!-- 送料＋商品合計 -->
 							<th>請求金額</th>
 							<td><%= @customer.total_price.to_s(:delimited) %></td>
 						</tr>

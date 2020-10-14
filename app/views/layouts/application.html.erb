@@ -74,6 +74,16 @@
     <% if admin_signed_in? %>
       <%= render 'admins/searches/box' %>
     <% end %>
-    <%= yield %>
+    <div class="container content">
+      <%= yield %>
+    </div>
+    <footer>
+      <div class="container-fluid">
+        <p class ="footer-text">
+          Copyright © 2020 nagano-cake Inc. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
   </body>
+  
 </html>

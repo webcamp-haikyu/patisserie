@@ -20,7 +20,7 @@
 				<h4>全<%= @products.count %>件</h4>
 			<% end %>
 
-			<div class="row">
+			<div class="row mb-5">
 				<% @products.each do |product| %>
 					<%= render 'table', product: product %>
 				<% end %>
