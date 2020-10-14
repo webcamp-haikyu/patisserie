@@ -7,7 +7,7 @@ https://github.com/webcamp-haikyu/patisserie/edit/master/README.md
 <strong> ながのケーキ（ECサイト）</strong><br>
 ⻑野県にある⼩さな洋菓⼦店「ながのCAKE」の商品を通販するためのECサイトです。<br>
 元々近隣住⺠が顧客でしたが、昨年始めたInstagramから⼈気となり、全国から注⽂をいただけるようになりました。<br>
-InstagramのDMやメールで通販の注⽂を受けておりましたが、情報管理の徹底化のもと
+InstagramのDMやメールで通販の注⽂を受けておりましたが、情報管理の徹底化のもと<br>
 管理機能を含んだ通販サイト開設に至りました。
 
 * 通販では注⽂に応じて製作する受注⽣産型
