@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   registrations: 'admins/registrations'
   }
   namespace :admins do
-    get 'admins/top' => 'admins#top'
+    root 'customers#top'
     resources :customers, only: [:index, :show, :edit, :update]
     resources :products, only: [:index, :new, :create,:show, :edit, :update]
     resources :categories, only: [:index, :create, :edit, :update, :destroy]
