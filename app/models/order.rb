@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
 
-	has_many :order_item, dependent: :destroy
+	has_many :order_items, dependent: :destroy
 	belongs_to :customer
 
 	enum payment_method: [:クレジットカード, :銀行振り込み]
