@@ -20,7 +20,7 @@
 					<tr>
 						<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
 						<td><%= order.address %></td>
-						<td><% order.order_item.each do |item| %>
+						<td><% order.order_items.each do |item| %>
 									<%= item.product.name %>
 								<% end %>
 						</td>
