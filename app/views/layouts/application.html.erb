@@ -71,9 +71,6 @@
         </nav>
       </div>
     </header>
-    <% if admin_signed_in? %>
-      <%= render 'admins/searches/box' %>
-    <% end %>
     <div class="container content">
       <%= yield %>
     </div>
