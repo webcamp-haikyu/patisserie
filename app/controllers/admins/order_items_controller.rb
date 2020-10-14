@@ -4,7 +4,7 @@ class Admins::OrderItemsController < ApplicationController
   	@order_item.update(order_item_params)
   	order = @order_item.order
   	if  order.order_items.count == order.order_items.where(making_status: "製作完了").count
-  		order.update(order_status: "発送準備中")
+  		order.update(order_status: "発送待ち")
   	elsif
   		order.order_items.count == order.order_items.where(making_status: "製作中").count
   		order.update(order_status: "製作中")
