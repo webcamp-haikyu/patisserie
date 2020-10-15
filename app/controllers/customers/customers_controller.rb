@@ -1,5 +1,5 @@
 class Customers::CustomersController < ApplicationController
-
+	before_action :authenticate_customer!
 	def show
 		@customer = current_customer
 	end
@@ -9,6 +9,9 @@ class Customers::CustomersController < ApplicationController
     redirect_to customers_my_page_path
   end
 
+  def index
+  end
+
   	# ユーザー退会画面
   	def check
   	end
@@ -16,6 +19,7 @@ class Customers::CustomersController < ApplicationController
   	# ユーザー退会
   	def withdrawal
 		current_customer.destroy
+		current_customer.update(is_active: false)
 		redirect_to root_path
   	end
 

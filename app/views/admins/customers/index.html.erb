@@ -1,15 +1,16 @@
 <div class='container'>
-  <div class='row pt-5'>
-    <h3>会員一覧</h3>
+  <%= render 'admins/searches/box' %>
+  <div class='row ml-1 mt-5'>
+    <h2>会員一覧</h2>
   </div>
-  <div class='row pt-5'>
+  <div class='row mt-3'>
   	<table class="col-9 text-center table table-hover table-inverse">
   	  <thead>
   	  	<tr>
   	  	  <th class="text-left">会員ID</th>
   	  	  <th class="text-left">氏名</th>
   	  	  <th>メールアドレス</th>
-  	  	  <th>ステータス</th>
+  	  	  <th>会員ステータス</th>
   	  	</tr>
   	  </thead>
   	  <tbody>
@@ -27,10 +28,10 @@
               <%= customer.email %>
             </td>
             <td>
-              <% if customer.is_active == true %>
+              <% if customer.deleted_at == nil %>
                 <p>有効</p>
               <% else %>
-                <p>無効</p>
+                <p>退会済み</p>
               <% end %>
             </td>
   	  	  </tr>

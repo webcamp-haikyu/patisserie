@@ -9,6 +9,7 @@
 				<%= link_to 'カートを空にする',cart_products_destroy_all_path,method: :delete,"data-confirm" =>"カートの中身を全て消します。よろしいですか？",class: "btn btn-danger" %>
 			</div>
 		</div>
+
 		<div class ="row">
 			<table class="table table-bordered">
 				<thead class="thead-light">
@@ -27,6 +28,7 @@
 								<%= attachment_image_tag cart_product.product, :image ,:fill, 80,50 %>
 								<%= cart_product.product.name %>
 							</td>
+							<!-- include_tax（税込価格)=>productモデルに記述 -->
 							<td><%= cart_product.product.include_tax.to_s(:delimited) %></td>
 							<td>
 								<%= form_with model:[cart_product.product, cart_product], url: product_cart_product_path(cart_product.product, cart_product), method: :patch do |f| %>
@@ -45,9 +47,11 @@
 				</tbody>
 			</table>
 		</div>
+
+
 		<div class ="row">
 			<div class ="col-md-2">
-				<%= link_to "買い物を続ける", products_path, class: "btn btn-outline-secondary" %>
+				<%= link_to "買い物を続ける", root_path, class: "btn btn-outline-secondary" %>
 			</div>
 			<div class ="col-md-4 offset-md-6">
 				<table class="table table-bordered">
@@ -68,7 +72,7 @@
 	<% else %>
 		<div class ="row mt-5">
 			<div class="col-md-8 offset-md-2">
-				<h3>カートに商品がありません  <%= link_to "買い物を続ける", products_path,class: "btn btn-outline-secondary" %></h3>
+				<h3>カートに商品がありません  <%= link_to "買い物を続ける", root_path,class: "btn btn-outline-secondary" %></h3>
 			</div>
 		</div>
 	<% end %>
